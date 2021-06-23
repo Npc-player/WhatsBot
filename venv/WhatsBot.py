@@ -45,7 +45,7 @@ def create_Toplevel1(rt, *args, **kwargs):
     root = rt
     w = tk.Toplevel (root)
     top = Toplevel1 (w)
-    #WhatsBot_support.init(w, top, *args, **kwargs)
+    # WhatsBot_support.init(w, top, *args, **kwargs)
     return (w, top)
 
 def destroy_Toplevel1():

@@ -22,8 +22,12 @@ def navegador(numeros, msg, anexo):
     le = open('lista_com_erros.txt', mode='w', encoding='UTF16')
     le.write(datetime.now().strftime('%d-%m-%Y' + ' ## ' +  '%H:%M:%S'))
     le.close()
-
     anexo = anexo.replace('/','\\\\')
+    try:
+        os.mkdir('selenium_profile')
+        os.mkdir('TEMP')
+    except:
+        pass
 ####### CONFIGURAÇÕES DO NAVEGADOR
     chromeoptions = Options()
     downloadfolder = (os.getcwd() + '\\TEMP\\')
@@ -41,7 +45,7 @@ def navegador(numeros, msg, anexo):
         print('Erro = ', erro)
         log_de_erros = open(os.getcwd() + '\\' + 'lista_com_erros.txt', mode='r', encoding='UTF16')
         conteudo = log_de_erros.readlines()
-        conteudo.append('###############################\n' + erro + ' Erro de abertura do Whatsapp Web - Tente novamente\n')
+        conteudo.append('###############################\n' , erro , ' Erro de abertura do Whatsapp Web - Tente novamente\n')
         log_de_erros = open(os.getcwd() + '\\' + 'lista_com_erros.txt', mode='w', encoding='UTF16')
         log_de_erros.writelines(conteudo)
         log_de_erros.close()
@@ -59,7 +63,7 @@ def navegador(numeros, msg, anexo):
                 #### criação do log de acertos
                 log_de_acertos = open(os.getcwd() + '\\' + 'Lista_sucesso.txt', mode='r', encoding='UTF16')
                 conteudo = log_de_acertos.readlines()
-                conteudo.append('###########################################\n' + i + ' Mensagem OK=  ' + msg + '\n')
+                conteudo.append('\n#######################################################\n' + i + ' Mensagem OK=  ' + msg + '\n')
                 log_de_acertos = open(os.getcwd() + '\\' + 'Lista_sucesso.txt', mode='w', encoding='UTF16')
                 log_de_acertos.writelines(conteudo)
                 log_de_acertos.close()
@@ -85,7 +89,7 @@ def navegador(numeros, msg, anexo):
             else:
                 log_de_acertos = open(os.getcwd() + '\\' + 'Lista_sucesso.txt', mode='r', encoding='UTF16')
                 conteudo = log_de_acertos.readlines()
-                conteudo.append(i + ' SEM ANEXO - ok\n#####################################\n')
+                conteudo.append(i + ' SEM ANEXO - ok\n#######################################################\n')
                 log_de_acertos = open(os.getcwd() + '\\' + 'Lista_sucesso.txt', mode='w', encoding='UTF16')
                 log_de_acertos.writelines(conteudo)
                 log_de_acertos.close()
@@ -97,7 +101,7 @@ def navegador(numeros, msg, anexo):
             if erro == ('O número de telefone compartilhado através de url é inválido.'):
                 log_de_erros = open(os.getcwd() + '\\' + 'lista_com_erros.txt', mode='r', encoding='UTF16')
                 conteudo = log_de_erros.readlines()
-                conteudo.append(' Números errados' + i + '#######################################################\n')
+                conteudo.append('\nNúmeros errados= ' + i + '\n#######################################################\n')
                 log_de_erros = open(os.getcwd() + '\\' + 'lista_com_erros.txt', mode='w', encoding='UTF16')
                 log_de_erros.writelines(conteudo)
                 log_de_erros.close()
