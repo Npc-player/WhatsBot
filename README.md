@@ -1,5 +1,8 @@
 # WhatsBot
 Programa de Mala-Direta feita com WhatsApp.
+
+
+
 ## INSTALAÇÃO (arquivos dentro da pasta venv:
   *WhatsBot.py
   *bot.py
