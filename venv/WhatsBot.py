@@ -27,6 +27,7 @@ from tkinter import filedialog as dlg
 from bot import start
 from tkinter import messagebox
 import base64
+import webbrowser
 
 
 def vp_start_gui():
@@ -233,6 +234,9 @@ class Toplevel1:
 
     def drive(self):
         bot.start(self.lista_numeros, self.msg_texto, self.anexo_path)
+
+    def doar(self):
+        webbrowser.open('https://www.paypal.com/donate?hosted_button_id=Y4WAV3LSWMVMU')
 
 
     ####################################################################################################
@@ -543,6 +547,32 @@ class Toplevel1:
         self.Label_Titulo.configure(font="-family {Segoe UI} -size 19 -weight bold")
         self.Label_Titulo.configure(foreground="#000000")
         self.Label_Titulo.configure(text='''WHAT'S BOT''')
+
+        ############  botão doar  #############
+        self.bt_doar = tk.Button(top)
+        self.bt_doar.place(relx=0.170, rely=0.962, height=18, width=47)
+        self.bt_doar.configure(activebackground="#ececec")
+        self.bt_doar.configure(activeforeground="#000000")
+        self.bt_doar.configure(background="#d9d9d9")
+        self.bt_doar.configure(disabledforeground="#a3a3a3")
+        self.bt_doar.configure(foreground="#000000")
+        self.bt_doar.configure(highlightbackground="#d9d9d9")
+        self.bt_doar.configure(highlightcolor="black")
+        self.bt_doar.configure(pady="0")
+        self.bt_doar.configure(text='''Doar''')
+        self.bt_doar.configure(command=self.doar)
+
+        self.Label_doar = tk.Label(top)
+        self.Label_doar.place(relx=0.0, rely=0.956, height=21, width=144)
+        self.Label_doar.configure(activebackground="#f9f9f9")
+        self.Label_doar.configure(activeforeground="black")
+        self.Label_doar.configure(background="#d9d9d9")
+        self.Label_doar.configure(disabledforeground="#a3a3a3")
+        self.Label_doar.configure(foreground="#000000")
+        self.Label_doar.configure(highlightbackground="#d9d9d9")
+        self.Label_doar.configure(highlightcolor="black")
+        self.Label_doar.configure(text='''Curtiu? Considere doar!''')
+
 
 if __name__ == '__main__':
     vp_start_gui()
