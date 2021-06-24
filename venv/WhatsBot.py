@@ -566,7 +566,7 @@ class Toplevel1:
         self.Label_doar.place(relx=0.0, rely=0.956, height=21, width=144)
         self.Label_doar.configure(activebackground="#f9f9f9")
         self.Label_doar.configure(activeforeground="black")
-        self.Label_doar.configure(background="#d9d9d9")
+        self.Label_doar.configure(background="#008040")
         self.Label_doar.configure(disabledforeground="#a3a3a3")
         self.Label_doar.configure(foreground="#000000")
         self.Label_doar.configure(highlightbackground="#d9d9d9")
